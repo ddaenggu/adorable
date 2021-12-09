@@ -1,0 +1,67 @@
+*{
+	margin: 0 auto;
+	padding: 0;
+}
+section{
+	padding-top: 50px;
+	padding-bottom: 100px;
+}
+h1{
+	font-family: 'Staatliches', cursive;
+	font-size: 36pt;
+	text-align: center;
+}
+.jointitle{
+	color: #C6B8F3;
+}
+.line{
+	padding-bottom: 5px;
+	border-bottom: 1px solid #CFCFCF;
+}
+th{
+	padding-top: 5px;
+	font-family: "맑은고딕";
+	font-size: 11pt;
+}
+.star{
+	color: red;
+}
+.selbox{
+	width:100px;
+	height:30px;
+	font-size:10pt;
+	text-align: left;
+	border: 1px solid #CFCFCF;
+}
+.borderline{
+	height: 25px;
+	border: 1px solid #CFCFCF;
+}
+.bt{
+	border: 1px solid #CFCFCF;
+	background-color: white;
+	padding: 3px;
+	width: 150px;
+	height: 30px;
+}
+.bt:hover{
+	background-color: #C6B8F3;
+}
+.joinbt{
+	height: 40px;
+	font-size: 12pt;
+	font-family: "맑은고딕";
+	font-weight: bold;
+}
+input[type='radio']:checked{
+	appearance: none;
+	width: 0.9rem;
+	height: 0.9rem;
+	border-radius: 100%;
+	background-color: #C6B8F3;
+	font-size: 10pt;
+}
+.idpwinfo{
+	font-size: 9pt;
+	font-family: "맑은고딕";
+}

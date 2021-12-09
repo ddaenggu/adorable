@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>회원가입</title>
+	<link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Playfair+Display:ital@1&family=Staatliches&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="./signup.css">
+	<link rel="stylesheet" type="text/css" href="./index.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script type="text/javascript" src="./index.js"></script>
+
+</head>
+<script type="text/javascript">
+	function signup() {
+		var id_len = su.id.value.length;
+		var pw_len = su.pw.value.length;
+		var name_len = su.name.value.length;
+		var mail_len = su.mail_front.value.length;
+
+		if (id_len < 4) {
+			alert("아이디는 4~16자만 사용가능합니다.");
+			su.id.value = "";
+			su.id.focus();
+			su.id.select();
+		}
+		else if (pw_len < 4) {
+			alert("비밀번호는 4~16자만 사용가능합니다.");
+			su.pw.value = "";
+			su.pw.focus();
+			su.pw.select();
+		}
+		else if (su.pw.value != su.pwcheck.value) {
+			alert("비밀번호가 일치하지 않습니다.");
+			su.pwcheck.value = "";
+			su.pwcheck.focus();
+			su.pwcheck.select();
+		}
+		else if (name_len < 2) {
+			alert("2자 이상 이름을 입력해주세요.");
+			su.name.value = "";
+			su.name.focus();
+			su.name.select();
+		}
+		else if (su.num_middle.value == '') {
+			alert("휴대전화번호를 입력해주세요.");
+			su.num_middle.value = "";
+			su.num_middle.focus();
+			su.num_middle.select();
+		}
+		else if (su.num_back.value == '') {
+			alert("휴대전화번호를 입력해주세요.");
+			su.num_back.value = "";
+			su.num_back.focus();
+			su.num_back.select();
+		}
+		else if (su.zipcode.value == '') {
+			alert("우편번호를 입력해주세요.");
+			su.zipcode.value = "";
+			su.zipcode.focus();
+			su.zipcode.select();
+		}
+		else if (su.address.value == '') {
+			alert("주소를 입력해주세요.");
+			su.address.value = "";
+			su.address.focus();
+			su.address.select();
+		}
+		else if (su.betteraddress.value == '') {
+			alert("상세주소를 입력해주세요.");
+			su.betteraddress.value = "";
+			su.betteraddress.focus();
+			su.betteraddress.select();
+		}
+		else if (mail_len < 4) {
+			alert("이메일아이디를 4~16자로 입력해주세요.");
+			su.mail_front.value = "";
+			su.mail_front.focus();
+			su.mail_front.select();
+		}
+		else if (su.mail_back.value == '이메일선택') {
+			alert("이메일을 선택해주세요.");
+			su.mail_back.focus();
+		}
+		else if (su.agree.value == '') {
+			alert("약관동의에 동의해주셔야 합니다.");
+		}
+		else if (su.agree.value == '동의하지않음') {
+			alert("약관동의에 동의해주셔야 합니다.");
+		}
+		else {
+			alert("회원가입이 완료되었습니다. \n아이디 : " + su.id.value + "\n비밀번호 : " + su.pw.value + "\n이름 : " + su.name.value + "\n휴대전화 : " + su.num_front.value + "-" + su.num_middle.value + "-" + su.num_back.value + "\n주소 : " + su.zipcode.value + " " + su.address.value + "\n상세주소 : " + su.betteraddress.value + "\n이메일 : " + su.mail_front.value + "@" + su.mail_back.value + "\n성별 : " + su.gender.value + "\n반려동물 종류 : " + su.petskind.value);
+		}
+		
+	}
+</script>
+<body>
+	<header>
+		<div class="fixtitle">
+			<div class="menu">
+				<ul>
+					<li class="menudetail"><a href="#">LOGIN</a></li>
+					<li> | </li>
+					<li class="menudetail"><a href="#">JOINUS</a></li>
+					<li> | </li>
+					<li class="menudetail"><a href="#">CART</a></li>
+					<li> | </li>
+					<li class="menudetail"><a href="#">MYPAGE</a></li>
+				</ul>
+			</div>
+			<div class="title">
+				<div class="adorable">adorable</div>
+			</div>
+				<div class="list">
+					<ul class="mainlist">
+						<li><a href="#"><img src="../image/dogfoot.png" width="50px" height="50px"></a></li>
+						<li><a href="#" class="ml6">BEST</a></li>
+						<li><a href="#" class="ml7">RECOMMEND</a></li>
+						<li><a href="#" class="ml1">WEAR</a>
+							<div class="triangle tri1"></div>
+							<ul class="sublist sb1">
+								<li><a href="#">아우터</a></li>
+								<li><a href="#">탑/티셔츠</a></li>
+								<li><a href="#">올인원/원피스</a></li>
+								<li><a href="#">악세사리</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="ml2">TOY</a>
+							<div class="triangle tri2"></div>
+							<ul class="sublist sb2">
+								<li><a href="#">봉제장난감</a></li>
+								<li><a href="#">터그놀이</a></li>
+								<li><a href="#">낚시대</a></li>
+								<li><a href="#">스크래</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="ml3">OTHER ITEMS</a>
+							<div class="triangle tri3"></div>
+							<ul class="sublist sb3">
+								<li><a href="#">간식</a></li>
+								<li><a href="#">배변패드/모래</a></li>
+								<li><a href="#">산책</a></li>
+								<li><a href="#">계단/캣타워</a></li>
+								<li><a href="#">하우스</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="ml8">LOOKBOOK</a></li>
+						<li><a href="#" class="ml9">EVENT</a></li>
+						<li><a href="#" class="ml10">HOTEL</a></li>
+						<li><a href="#" class="ml4">COMMUNITY</a>
+							<div class="triangle tri4"></div>
+							<ul class="sublist sb4">
+								<li><a href="#">Q&A</a></li>
+								<li><a href="#">반려동물 일기</a></li>
+								<li><a href="#">반려동물동반 장소추천</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="ml5">ADORABLE NEWS</a>
+							<div class="triangle tri5"></div>
+							<ul class="sublist sb5">
+								<li><a href="#">공지사항</a></li>
+								<li><a href="#">입고/배송 지연안내</a></li>
+							</ul>
+						</li>
+						<li><a href="#"><img src="../image/catfoot.png" width="50px" height="50px"></a></li>
+					</ul>
+				</div>
+		</div>
+	</header>
+
+	<section>
+	<form name="su">
+		<h1>
+			<img src="../image/jointitle1.PNG" width="60px" height="60px">
+			<b class="jointitle">JOIN US</b>
+			<img src="../image/jointitle2.PNG" width="60px" height="60px">
+		</h1><br>
+		<div>
+		<table width="600px">
+			<th align="left">
+				<b><font size="4">기본정보</font></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<b class="star">*</b>필수입력사항
+			</th>
+			<tr><td class="line"></td></tr>
+			<th align="left">
+				아이디 <b class="star">*</b>
+			</th>
+			<tr>
+				<td class="line" height="30">
+					<input type="text" size="30" name="id" class="borderline" maxlength="16" placeholder="영문소문자/숫자, 4~16자">
+					<input type="button" name="overlap" value="중복확인" class="bt"> <span class="idpwinfo"></span>
+				</td>
+			</tr>
+			<th align="left">
+				비밀번호 <b class="star">*</b>
+			</th>
+			<tr>
+				<td class="line" height="30">
+					<input type="password" size="30" name="pw" class="borderline" maxlength="16" placeholder="영문소문자/숫자/특수문자, 4~16자"> <span class="idpwinfo"></span>
+				</td>
+			</tr>
+			<th align="left">
+				비밀번호확인 <b class="star">*</b>
+			</th>
+			<tr>
+				<td class="line" height="30">
+					<input type="password" size="30" name="pwcheck" class="borderline" maxlength="16">
+				</td>
+			</tr>
+			<th align="left">
+				이름 <b class="star">*</b>
+			</th>
+			<tr>
+				<td class="line" height="30">
+					<input type="text" size="30" name="name" class="borderline">
+				</td>
+			</tr>
+			<th align="left">
+				휴대전화 <b class="star">*</b>
+			</th>
+			<tr>
+				<td class="line" height="30">
+					<select class="selbox" name="num_front">
+						<option value="010">010</option>
+						<option value="011">011</option>
+						<option value="019">019</option>
+						<option value="018">018</option>
+						<option value="017">017</option>
+						<option value="016">016</option>
+					</select>
+					<input type="text" size="10" name="num_middle" class="borderline" maxlength="4">
+					<input type="text" size="10" name="num_back" class="borderline" maxlength="4">
+				</td>
+			</tr>
+			<th align="left">
+				주소 <b class="star">*</b>
+			</th>
+			<tr>
+				<td>
+					<input type="text" size="6" name="zipcode" class="borderline" placeholder="우편번호">
+					<input type="text" size="40" name="address" class="borderline" placeholder="주소">
+				</td>
+			</tr>
+			<tr>
+				<td class="line" height="30">
+					<input type="text" size="50" name="betteraddress" class="borderline" placeholder="상세주소">
+				</td>
+			</tr>
+			<th align="left">
+				이메일 <b class="star">*</b>
+			</th>
+			<tr>
+				<td class="line" height="30">
+					<input type="text" size="20" name="mail_front" class="borderline">
+					@
+					<select class="selbox" name="mail_back">
+						<option selected>이메일선택</option>
+						<option value="naver.com">naver.com</option>
+						<option value="gmail.com">gmail.com</option>
+						<option value="hanmail.net">hanmail.net</option>
+						<option value="yahoo.co.kr">yahoo.co.kr</option>
+						<option value="daum.net">daum.net</option>
+					</select>
+				</td>
+			</tr>
+		</table><br>
+		<table width="600px">
+			<th align="left">
+				<b><font size="4">추가정보</font></b>
+			</th>
+			<tr><td class="line"></td></tr>
+			<th align="left">
+				성별
+			</th>
+			<tr>
+				<td class="line" height="30">
+					<input type="radio" name="gender" value="여" checked> 여
+					<input type="radio" name="gender" value="남"> 남
+				</td>
+			</tr>
+			<th align="left">
+				반려동물 종류
+			</th>
+			<tr>
+				<td class="line" height="30">
+					<select class="selbox" name="petskind">
+						<option value="없음" selected>없음</option>
+						<option value="강아지">강아지</option>
+						<option value="고양이">고양이</option>
+					</select>
+				</td>
+			</tr>
+			
+		</table><br><br>
+		<table width="600px">
+			<th align="center">
+				<b><font size="4">약관동의</font></b>
+			</th>
+			<tr>
+				<td align="center">
+					<textarea rows="10" cols="80">1. 개인정보 수집목적 및 이용목적
+
+가. 서비스 제공에 관한 계약 이행 및 서비스 제공에 따른 요금정산
+
+콘텐츠 제공 , 구매 및 요금 결제 , 물품배송 또는 청구지 등 발송 , 금융거래 본인 인증 및 금융 서비스
+
+나. 회원 관리
+
+회원제 서비스 이용에 따른 본인확인 , 개인 식별 , 불량회원의 부정 이용 방지와 비인가 사용 방지 , 가입 의사 확인 , 연령확인 , 만14세 미만 아동 개인정보 수집 시 법정 대리인 동의여부 확인, 불만처리 등 민원처리 , 고지사항 전달
+
+2. 수집하는 개인정보 항목 : 이름 , 생년월일 , 성별 , 로그인ID , 비밀번호 , 자택 전화번호 , 휴대전화번호 , 이메일 , 14세미만 가입자의 경우 법정대리인의 정보
+
+3. 개인정보의 보유기간 및 이용기간
+
+원칙적으로, 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다. 단, 다음의 정보에 대해서는 아래의 이유로 명시한 기간 동안 보존합니다.
+
+가. 회사 내부 방침에 의한 정보 보유 사유
+
+o 부정거래 방지 및 쇼핑몰 운영방침에 따른 보관 : 5년
+
+나. 관련 법령에 의한 정보보유 사유
+
+o 계약 또는 청약철회 등에 관한 기록
+
+-보존이유 : 전자상거래등에서의소비자보호에관한법률
+
+-보존기간 : 5년
+
+o 대금 결제 및 재화 등의 공급에 관한 기록
+
+-보존이유: 전자상거래등에서의소비자보호에관한법률
+
+-보존기간 : 5년
+
+o 소비자 불만 또는 분쟁처리에 관한 기록
+
+-보존이유 : 전자상거래등에서의소비자보호에관한법률
+
+-보존기간 : 3년
+
+o 로그 기록
+
+-보존이유: 통신비밀보호법
+
+-보존기간 : 3개월
+
+※ 동의를 거부할 수 있으나 거부시 회원 가입이 불가능합니다.
+					</textarea>
+				</td>
+			</tr>
+			<tr>
+				<td align="center">
+					<input type="radio" name="agree" value="동의함"> 동의함
+					<input type="radio" name="agree" value="동의하지않음"> 동의하지않음
+				</td>
+			</tr>
+		</table><br><br>
+		<table>
+			<tr>
+				<td>
+					<input type="button" value="가입하기" class="bt joinbt" onclick="signup()">
+					<input type="button" value="취소" class="bt joinbt">
+				</td>
+			</tr>
+		</table>
+		</div>
+	</form>
+	</section>
+
+	<footer>
+		<div class="foottitle">
+			<div class="ftleft">
+				<div class="ft1">COMPANY ㈜adorable
+					<div class="ft1_1">
+						대표자. 백현민 <br>
+						tel. 010-7430-6757 <br>
+						business no. 123-45-6789 <br>
+						mail. bhm01@naver.com <br>
+						address. 서울특별시 관악구 관악로
+					</div>
+				</div>
+				<div class="ft2">C/S CENTER
+					<div class="ft1_1">
+						<h3>070-1234-5678</h3><br>
+						mon-fri am11:00-pm5:00 <br>
+						lunch pm12:00-pm1:00 <br>
+						sat, sun, holiday off
+					</div>
+				</div>
+			</div>
+			<div class="ftright">
+				<div class="ft1">BANK ACCOUNT
+					<div class="ft1_1">
+						농협 123-1234-5678-90 <br>
+						신한은행 123-4567-890 <br><br>
+						예금주 : ㈜어도러블
+					</div>
+				</div>
+				<div class="ft2">SOCIAL LINK
+					<div class="ft1_1">
+						<a href="https://www.instagram.com/ddddanggu/" target="_blank"><img src="../image/instalogo.png" width="50px" height="50px"></a>
+						<a href="https://www.facebook.com/" target="_blank"><img src="../image/facebooklogo.png" width="50px" height="50px"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>	
+
+</body>
+</html>
